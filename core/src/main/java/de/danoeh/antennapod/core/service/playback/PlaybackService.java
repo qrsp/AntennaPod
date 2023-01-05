@@ -911,14 +911,14 @@ public class PlaybackService extends MediaBrowserServiceCompat {
     public void sleepTimerUpdate(SleepTimerUpdatedEvent event) {
         if (event.isOver()) {
             mediaPlayer.pause(true, true);
-            mediaPlayer.setVolume(1.0f, 1.0f);
+            // mediaPlayer.setVolume(1.0f, 1.0f);
         } else if (event.getTimeLeft() < PlaybackServiceTaskManager.SleepTimer.NOTIFICATION_THRESHOLD) {
-            final float[] multiplicators = {0.1f, 0.2f, 0.3f, 0.3f, 0.3f, 0.4f, 0.4f, 0.4f, 0.6f, 0.8f};
-            float multiplicator = multiplicators[Math.max(0, (int) event.getTimeLeft() / 1000)];
-            Log.d(TAG, "onSleepTimerAlmostExpired: " + multiplicator);
-            mediaPlayer.setVolume(multiplicator, multiplicator);
+            // final float[] multiplicators = {0.1f, 0.2f, 0.3f, 0.3f, 0.3f, 0.4f, 0.4f, 0.4f, 0.6f, 0.8f};
+            // float multiplicator = multiplicators[Math.max(0, (int) event.getTimeLeft() / 1000)];
+            // Log.d(TAG, "onSleepTimerAlmostExpired: " + multiplicator);
+            // mediaPlayer.setVolume(multiplicator, multiplicator);
         } else if (event.isCancelled()) {
-            mediaPlayer.setVolume(1.0f, 1.0f);
+            // mediaPlayer.setVolume(1.0f, 1.0f);
         }
     }
 
